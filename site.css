@@ -4,7 +4,7 @@
 html, body { background: #000; color: #fff; }
 body { font-family: var(--font-text); font-weight: 400; -webkit-font-smoothing: antialiased; }
 ::selection { background: var(--p-accent); color: #fff; }
-.l-zh { display: none; }
+html:not([data-uilang="zh"]) .l-zh { display: none !important; }
 h1, h2, h3.t-big, .serif { font-family: var(--font-display); font-weight: 400; letter-spacing: var(--display-tracking); }
 h2 { font-size: clamp(40px, 5.2vw, 84px); line-height: .98; }
 em, .it { font-style: italic; }
@@ -228,3 +228,8 @@ main > section#path.tl3d { height: 720svh; }
 .tl3d__dot.is-on { background: #8fa2ff; transform: scale(1.5); }
 .tl3d__mark { position: absolute; left: 50%; bottom: 0; width: 2px; height: 30px; margin-left: -1px; background: #8fa2ff; }
 .tl3d .wheel__count { bottom: 20px; }
+
+/* a vertical video in a wide card: itself whole in the middle, a blurred copy of its cover filling the sides */
+.pcard__media--tall { background: #050505; overflow: hidden; }
+.pcard__media--tall > .pcard__blur { position: absolute; inset: 0; filter: blur(28px) brightness(.5); transform: scale(1.25); }
+.pcard__media--tall > video { position: relative; object-fit: contain; }

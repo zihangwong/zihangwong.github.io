@@ -44,13 +44,13 @@
 /* the language: a stored choice, else the browser's; English without script */
 (function(){var d=document.documentElement,l=null;try{l=localStorage.getItem('zh-ui')}catch(e){}
 if(!l){l=/^zh/i.test(navigator.language||'')?'zh':'en'}d.dataset.uilang=l;d.lang=l==='zh'?'zh-Hans':'en';
-var st=document.createElement('style');var D='dis'+'play';st.textContent='html[data-uilang="zh"] .l-zh{'+D+':revert!important}html[data-uilang="zh"] .l-en{'+D+':none!important}';document.head.appendChild(st)})();
+var st=document.createElement('style');var D='dis'+'play';st.textContent='html[data-uilang="zh"] .l-en{'+D+':none!important}';document.head.appendChild(st)})();
 </script>
 <script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
 <link rel="modulepreload" href="assets/moments/moments.js">
 <link rel="modulepreload" href="assets/moments/lib.js">
 <link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
-<link rel="stylesheet" href="site.css?v=3">
+<link rel="stylesheet" href="site.css?v=5">
 </head>
 <body>
 <a class="skip" href="#top"><span class="l-en">Skip to content</span><span class="l-zh">跳到正文</span></a>
@@ -111,12 +111,12 @@ var st=document.createElement('style');var D='dis'+'play';st.textContent='html[d
       </div>
       <div class="wheel__floor" aria-hidden="true"></div>
       <div class="ring" data-ring>
-        <a class="pcard" href="https://github.com/bubeishisuqiangua/short-video-edit">
+        <a class="pcard" target="_blank" rel="noopener" href="https://github.com/bubeishisuqiangua/short-video-edit">
           <div class="pcard__media"><div class="dg" data-diagram data-dg-still><script type="application/json">{"layout":"lanes","alt":"Raw footage goes into short-video-edit, which makes captions, motion text and the mix in parallel, then the final cut.","curve":"curve","input":{"label":"Footage","icon":"ui:video","meta":"MOV"},"core":{"label":"short-video-edit","icon":"claude-code"},"lanes":[{"label":"Captions","icon":"ui:captions","meta":"Whisper"},{"label":"Motion text","icon":"ui:type","meta":"12 styles"},{"label":"Mix","icon":"ui:audio-lines","meta":"-13 LUFS"}],"output":{"label":"Final cut","icon":"ui:check","done":true}}</script></div></div>
           <div class="pcard__shade"></div>
           <div class="pcard__meta"><div><b>short-video-edit</b><span><span class="l-en">Agent skill that edits a talking-head short end to end.</span><span class="l-zh">自动剪口播短视频的 agent skill。</span></span></div><span class="disc"><svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
         </a>
-        <a class="pcard" href="https://github.com/bubeishisuqiangua/video-content-workflow">
+        <a class="pcard" target="_blank" rel="noopener" href="https://github.com/bubeishisuqiangua/video-content-workflow">
           <div class="pcard__media"><pre class="cmd" role="img" aria-label="The helper's commands for one video job">workflow.py init
 workflow.py create first-demo
 workflow.py start first-demo
@@ -125,15 +125,15 @@ workflow.py start first-demo
           <div class="pcard__shade"></div>
           <div class="pcard__meta"><div><b>video-content-workflow</b><span><span class="l-en">Idea to captions and cover. Nothing posts without approval.</span><span class="l-zh">从想法到字幕和封面，没确认就不发布。</span></span></div><span class="disc"><svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
         </a>
-        <a class="pcard" href="media/onlyskills-45s.mp4">
-          <div class="pcard__media"><video src="media/onlyskills-45s.mp4" poster="media/onlyskills-45s.jpg" muted playsinline preload="none" loop data-hover-play aria-label="OnlySkills in 45 seconds: profile, goal, WorkBuddy agents, team, plan and bookkeeping"></video></div>
+        <a class="pcard" href="https://github.com/James18000/OnlySkills" target="_blank" rel="noopener">
+          <div class="pcard__media"><video src="media/onlyskills-45s.mp4" poster="media/onlyskills-45s.jpg" muted playsinline preload="metadata" loop data-hover-play aria-label="OnlySkills in 45 seconds: profile, goal, WorkBuddy agents, team, plan and bookkeeping"></video></div>
           <div class="pcard__shade"></div>
-          <div class="pcard__meta"><div><b>OnlySkills</b><span><span class="l-en">Dormathon 2026. UI/UX designer in a team of 4. Watch the 45-second demo.</span><span class="l-zh">Dormathon 2026，4 人团队里负责 UI/UX。点开看 45 秒演示。</span></span></div><span class="disc"><svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="pcard__meta"><div><b>OnlySkills</b><span><span class="l-en">Dormathon 2026. UI/UX designer in a team of 4. Code on GitHub.</span><span class="l-zh">Dormathon 2026，4 人团队里负责 UI/UX。代码在 GitHub。</span></span></div><span class="disc"><svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
         </a>
-        <a class="pcard" href="media/promo-720.mp4">
-          <div class="pcard__media" style="background:#050a06"><video src="media/promo-720.mp4" poster="media/work-interview.jpg" muted playsinline preload="none" loop data-hover-play style="object-fit:contain" aria-label="The showreel, playing without sound"></video></div>
+        <a class="pcard" href="https://drive.google.com/drive/folders/1Rfxl5mgmgCXypjcgyyJUoyiSB5PkhOQd" target="_blank" rel="noopener">
+          <div class="pcard__media pcard__media--tall"><img class="pcard__blur" src="media/promo-720.jpg" alt="" aria-hidden="true"><video src="media/promo-720.mp4" poster="media/promo-720.jpg" muted playsinline preload="metadata" loop data-hover-play aria-label="The showreel, playing without sound"></video></div>
           <div class="pcard__shade"></div>
-          <div class="pcard__meta"><div><b><span class="l-en">Showreel</span><span class="l-zh">宣传片</span></b><span><span class="l-en">30 seconds: explainers, interviews, ads and tours.</span><span class="l-zh">30 秒：口播、访谈、广告和看房。</span></span></div><span class="disc"><svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="pcard__meta"><div><b><span class="l-en">Showreel</span><span class="l-zh">宣传片</span></b><span><span class="l-en">30 seconds: explainers, interviews, ads and tours. More on Drive.</span><span class="l-zh">30 秒：口播、访谈、广告和看房。更多作品在 Drive。</span></span></div><span class="disc"><svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
         </a>
         <a class="pcard" href="#movielingo">
           <div class="pcard__media"><img src="media/ml-strip.jpg" alt="Four MovieLingo shorts side by side: bewildered, transcend, cerulean and destined" width="1600" height="712"></div>
@@ -265,7 +265,7 @@ workflow.py start first-demo
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="site-motion.js?v=3"></script>
+<script src="site-motion.js?v=5"></script>
 <script type="module" src="timeline.js?v=3"></script>
 <script type="module" src="assets/system.js"></script>
 <script type="module" src="assets/diagrams/mount.js"></script>

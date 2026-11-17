@@ -26,11 +26,14 @@
   function tick() { try { clock.textContent = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kuala_Lumpur' }).format(new Date()); } catch (e) {} }
   if (clock) { tick(); setInterval(tick, 30000); }
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* on a wide screen the ring plays its front card (below); elsewhere a video plays while it is in view */
+  var ringed = matchMedia('(min-width: 768px)').matches;
+  var seen = 'IntersectionObserver' in window && new IntersectionObserver(function (es) {
+    es.forEach(function (e) { e.isIntersecting ? e.target.play().catch(function () {}) : e.target.pause(); });
+  }, { threshold: .6 });
   document.querySelectorAll('[data-hover-play]').forEach(function (v) {
-    if (reduce) return;
-    var card = v.closest('a') || v;
-    card.addEventListener('pointerenter', function () { v.play().catch(function () {}); });
-    card.addEventListener('pointerleave', function () { v.pause(); });
+    if (reduce || (ringed && v.closest('[data-ring]'))) return;
+    if (seen) seen.observe(v);
   });
 
   if (!window.gsap || !window.ScrollTrigger || reduce) { root.classList.add('sm-still'); return; }
@@ -104,7 +107,15 @@
     var n = sec.querySelector('[data-wheel-n]'), last = cards.length - 1;
     /* each card holds in the middle for the first and last 30% of its stretch of scroll and turns
        to the next only in between; the ring then eases toward that point, so it never races */
-    var target = 0, cur = 0;
+    var target = 0, cur = 0, shown = -1, inView = false;
+    /* the card in the middle plays its video (muted); the others rest */
+    function playFront() {
+      var k = inView ? Math.round(cur) : -1; if (k === shown) return; shown = k;
+      cards.forEach(function (c, i) { var v = c.querySelector('video'); if (!v) return;
+        if (i === k) v.play().catch(function () {}); else v.pause(); });
+    }
+    ScrollTrigger.create({ trigger: sec, start: 'top 60%', end: 'bottom 40%',
+      onToggle: function (s) { inView = s.isActive; playFront(); } });
     function dwell(x) { var i = Math.floor(x), f = x - i, k = Math.min(1, Math.max(0, (f - .3) / .4)); return i + k * k * (3 - 2 * k); }
     ScrollTrigger.create({ trigger: sec, start: 'top top', end: 'bottom bottom',
       onUpdate: function (s) { target = dwell(s.progress * last); } });
@@ -114,6 +125,7 @@
       ring.style.setProperty('--rot', (-cur * step) + 'deg');
       cards.forEach(function (c, i) { var d = Math.abs(i - cur); c.style.opacity = Math.max(.35, 1 - d * .4); });
       if (n) n.textContent = pad(Math.round(cur) + 1);
+      playFront();
     });
     ring.style.setProperty('--rot', '0deg');
     gsap.from(sec.querySelector('.wheel__floor'), { opacity: 0, duration: 1.5, scrollTrigger: { trigger: sec, start: 'top 70%', once: true } });
