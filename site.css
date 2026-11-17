@@ -200,7 +200,7 @@ main > section.aff { height: auto; min-height: 0; padding: clamp(96px, 14vh, 160
 .aff__item > span { font-size: 14px; color: #8c8c8c; }
 .aff__logo { height: 150px; border-radius: 16px; background: #fff; display: grid; place-items: center; padding: 20px; }
 .aff__logo img { max-height: 110px; max-width: 82%; object-fit: contain; }
-.aff__logo--type span { font: 700 44px/1 var(--font-text); letter-spacing: .08em; color: #000; }
+
 @media (max-width: 767px) { .aff__row { grid-template-columns: 1fr; } }
 
 /* ---------- the 3D timeline (timeline.js): curved screens on a grid floor ---------- */
