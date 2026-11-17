@@ -16,7 +16,7 @@ function start() {
     date: c.querySelector('.tcard__date').textContent.trim(),
     month: c.dataset.month, fy: c.dataset.fy ? +c.dataset.fy : .78,
     img: c.querySelector('img')?.getAttribute('src') || null,
-    video: c.dataset.video || null,
+    video: c.dataset.video || null, fit: c.dataset.fit || 'cover',
     title: c.querySelector('h3'),
     body: c.querySelector('p'),
   }));
@@ -84,10 +84,33 @@ function start() {
     if (it.video) {
       const v = document.createElement('video'); Object.assign(v, { src: it.video, muted: true, loop: true, playsInline: true, crossOrigin: 'anonymous' });
       v.setAttribute('muted', ''); it.el = v;
+      if (it.fit === 'contain') return containVideo(it, v);
       return new Promise((res) => { v.addEventListener('loadedmetadata', () => res(cover(new THREE.VideoTexture(v), v.videoWidth, v.videoHeight, it.fy)), { once: true }); v.load(); });
     }
     if (it.img) return new Promise((res) => loader.load(it.img, (t) => res(cover(t, t.image.width, t.image.height, it.fy)), undefined, () => res(null)));
     return document.fonts.ready.then(() => typeCard(it));
+  }
+  /* a tall video on a wide card: the whole video in the middle, a blurred, darkened copy filling the
+     sides (the copy is drawn tiny and stretched back up, which blurs it for free). Redrawn each frame
+     while it plays. */
+  function containVideo(it, v) {
+    const c = document.createElement('canvas'); c.width = 1400; c.height = Math.round(1400 * CH / CW);
+    const x = c.getContext('2d'), sm = document.createElement('canvas'); sm.width = 28; sm.height = 18;
+    const sx = sm.getContext('2d'); const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+    const draw = () => {
+      if (!v.videoWidth) return;
+      const vr = v.videoWidth / v.videoHeight, sh = sm.width / vr;
+      sx.drawImage(v, 0, (sm.height - sh) / 2, sm.width, sh);
+      x.imageSmoothingEnabled = true; x.drawImage(sm, 0, 0, c.width, c.height);
+      x.fillStyle = 'rgba(0,0,0,.45)'; x.fillRect(0, 0, c.width, c.height);
+      const h = c.height, w = h * vr; x.drawImage(v, (c.width - w) / 2, 0, w, h);
+      tex.needsUpdate = true;
+    };
+    it.draw = draw;
+    return new Promise((res) => {
+      v.addEventListener('loadeddata', () => { draw(); res(tex); }, { once: true });
+      v.preload = 'auto'; v.load();
+    });
   }
   function typeCard(it) {              // a milestone with no picture: its year and title set large
     const c = document.createElement('canvas'); c.width = 1600; c.height = Math.round(1600 * CH / CW);
@@ -149,6 +172,7 @@ function start() {
       c.mesh.position.y = .25 - Math.min(.4, d * d * .06);
     });
     setActive(Math.round(cur));
+    const front = items[active]; if (front.draw && front.el && !front.el.paused) front.draw();
     /* the ruler: the current point in time sits under the mark */
     const a = Math.floor(cur), b = Math.min(last, a + 1), f = cur - a;
     const ma = months.indexOf(items[a].month), mb = months.indexOf(items[b].month);
