@@ -36,7 +36,10 @@
   if (!window.gsap || !window.ScrollTrigger || reduce) { root.classList.add('sm-still'); return; }
   root.classList.add('sm-on');
   gsap.registerPlugin(ScrollTrigger);
-  var wide = matchMedia('(min-width: 768px)').matches;
+  var wideQ = matchMedia('(min-width: 768px)'), wide = wideQ.matches;
+  /* the rings and the 3D timeline are built for the width the page loaded at; crossing the
+     phone breakpoint rebuilds the page so they appear (or step aside) */
+  wideQ.addEventListener('change', function () { location.reload(); });
 
   /* ---- smooth wheel ---- */
   if (window.Lenis) {

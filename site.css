@@ -172,14 +172,15 @@ html.sm-still .pcard { position: relative; width: 100%; translate: none; transfo
 .skip:focus { top: 16px; }
 
 /* the kit fixes every main > section to one screen with its padding; these two size themselves */
+/* (:not(.hero) lifts these above the kit's 640-1279px "height:auto" rule, which is (0,2,1)) */
 main > section.hx { height: auto; min-height: 100svh; padding: 120px clamp(16px, 4vw, 64px) 80px; }
-main > section.wheel { height: 600svh; padding: 0; }
-@media (max-width: 767px) { main > section.wheel { height: auto; } }
-html.sm-still main > section.wheel { height: auto; }
+main > section.wheel:not(.hero) { height: 600svh; padding: 0; }
+@media (max-width: 767px) { main > section.wheel:not(.hero) { height: auto; } }
+html.sm-still main > section.wheel:not(.hero) { height: auto; }
 @media (max-width: 767px) { .top { background: linear-gradient(#000 55%, rgb(0 0 0 / 0)); padding-bottom: 28px; } }
 
 /* ---------- the timeline ring: tall cards, a date over each ---------- */
-main > section.wheel--time { height: calc(var(--n, 8) * 62svh); }
+main > section.wheel.wheel--time:not(.hero) { height: calc(var(--n, 8) * 62svh); }
 .tcard { width: min(26vw, 360px); aspect-ratio: 3 / 4.3; display: flex; flex-direction: column; background: #111; }
 .tcard__media { position: relative; flex: 1 1 auto; min-height: 0; overflow: hidden; }
 .tcard__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
@@ -189,8 +190,8 @@ main > section.wheel--time { height: calc(var(--n, 8) * 62svh); }
 .tcard__date { font: 500 12px/1 var(--font-mono); color: #8fa2ff; letter-spacing: .04em; }
 .tcard h3 { margin: 10px 0 6px; font: 400 clamp(22px, 1.7vw, 28px)/1.05 var(--font-display); }
 .tcard p { margin: 0; font-size: 14px; line-height: 1.45; color: #bdbdbd; }
-@media (max-width: 767px) { main > section.wheel--time { height: auto; } .tcard { width: 100%; aspect-ratio: auto; } .tcard__media { aspect-ratio: 4 / 3; } }
-html.sm-still main > section.wheel--time { height: auto; }
+@media (max-width: 767px) { main > section.wheel.wheel--time:not(.hero) { height: auto; } .tcard { width: 100%; aspect-ratio: auto; } .tcard__media { aspect-ratio: 4 / 3; } }
+html.sm-still main > section.wheel.wheel--time:not(.hero) { height: auto; }
 
 /* ---------- affiliations: logos on white tiles ---------- */
 main > section.aff { height: auto; min-height: 0; padding: clamp(96px, 14vh, 160px) 0; }
