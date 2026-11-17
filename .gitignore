@@ -1,0 +1,11 @@
+# build notes, screenshots and old versions stay local
+archive/
+shots/
+.taste-skill/
+.claude/
+PRODUCT.md
+# kit parts this site does not use
+assets/photos/
+assets/objects/
+assets/scenes/
+assets/layout/img/

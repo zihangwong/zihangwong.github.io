@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en" data-uilang="en" data-type="software" data-radius="round" data-buttons="pill" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wong Zi Hang: AI student at Universiti Malaya who makes videos</title>
+<meta name="description" content="Portfolio of Wong Zi Hang (黄梓航): open-source AI editing tools, a hackathon project, video work and the path so far.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wong Zi Hang: AI student at Universiti Malaya who makes videos">
+<meta property="og:description" content="Open-source AI editing tools, video work and the path so far.">
+<meta property="og:image" content="share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#000000">
+<meta name="site-kind" content="software">
+<meta name="page-type" content="software">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<link rel="stylesheet" href="assets/icons/icon.css">
+<link rel="stylesheet" href="assets/diagrams/diagram.css">
+<link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
+<style>
+:root {
+  --p-bg: #000000; --p-surface: #111111; --p-ink: #ffffff; --p-muted: #8c8c8c;
+  --p-accent: #2b50ff; --p-accent-ink: #ffffff; --p-action: #2b50ff; --p-action-ink: #ffffff;
+  --p-inv-bg: #ffffff; --p-inv-surface: #ececec; --p-inv-ink: #000000; --p-inv-muted: #555555;
+  --p-inv-accent: #2b50ff; --p-inv-accent-ink: #ffffff; --p-inv-action: #000000; --p-inv-action-ink: #ffffff;
+  --font-display: "Instrument Serif", "Noto Serif SC", Georgia, serif;
+  --font-text: "Geist", "Noto Sans SC", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, Menlo, Consolas, monospace;
+  --display-weight: 400;
+  --display-tracking: -0.01em;
+  --display-tracking-xl: -0.02em;
+  --ly-scale: 1;
+  --line-col: rgb(255 255 255 / .07);
+}
+</style>
+<script>
+/* the language: a stored choice, else the browser's; English without script */
+(function(){var d=document.documentElement,l=null;try{l=localStorage.getItem('zh-ui')}catch(e){}
+if(!l){l=/^zh/i.test(navigator.language||'')?'zh':'en'}d.dataset.uilang=l;d.lang=l==='zh'?'zh-Hans':'en';
+var st=document.createElement('style');var D='dis'+'play';st.textContent='html[data-uilang="zh"] .l-zh{'+D+':revert!important}html[data-uilang="zh"] .l-en{'+D+':none!important}';document.head.appendChild(st)})();
+</script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="assets/moments/moments.js">
+<link rel="modulepreload" href="assets/moments/lib.js">
+<link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="skip" href="#top"><span class="l-en">Skip to content</span><span class="l-zh">跳到正文</span></a>
+<div class="cols" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="logo" href="#top">黄梓航<small>Wong Zi Hang</small></a>
+  <button class="pill lang" type="button" data-lang-toggle aria-label="Language: English or 中文"><span class="le">EN</span><span class="lz">中</span></button>
+  <button class="pill" type="button" data-menu aria-expanded="false" aria-controls="menu"><span class="l-en">Menu</span><span class="l-zh">菜单</span><span class="disc"><svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+</header>
+
+<nav class="menu" id="menu" aria-label="Menu">
+  <a href="#work"><span class="n">01</span><span class="l-en">Work</span><span class="l-zh">作品</span></a>
+  <a href="#movielingo"><span class="n">02</span>MovieLingo</a>
+  <a href="#path"><span class="n">03</span><span class="l-en">Timeline</span><span class="l-zh">经历</span></a>
+  <a href="#about"><span class="n">04</span><span class="l-en">About</span><span class="l-zh">关于</span></a>
+  <a href="mailto:zihang070206@gmail.com"><span class="n">05</span><span class="l-en">Email me</span><span class="l-zh">写信给我</span></a>
+  <div class="menu__foot"><a href="https://github.com/bubeishisuqiangua">GitHub</a><a href="https://www.linkedin.com/in/wong-zi-hang-525a99426/">LinkedIn</a><a href="https://www.instagram.com/movielingo_/">Instagram</a></div>
+</nav>
+
+<div class="corner corner--l" aria-hidden="true">SCROLL <b data-tc>00:00:00:00</b></div>
+<div class="corner corner--r" aria-hidden="true">KUALA LUMPUR <b data-clock>--:--</b></div>
+
+<main id="top">
+  <section class="hx" id="hero" aria-labelledby="hero-h">
+    <div class="hx__orb" data-fx="orb-sphere" data-fx-seed="7" aria-hidden="true"></div>
+    <h1 id="hero-h">
+      <span class="ln"><span><span class="l-en">Wong Zi Hang</span><span class="l-zh">黄梓航</span></span></span>
+      <span class="ln grey"><span><span class="l-en">AI student who</span><span class="l-zh">会写工具的</span></span></span>
+      <span class="ln"><span><span class="l-en">makes <em>videos</em></span><span class="l-zh"><em>剪辑师</em></span></span></span>
+    </h1>
+    <div class="hx__tiles">
+      <div class="tile"><b>50+</b><span><span class="l-en">videos edited for clients</span><span class="l-zh">条为客户剪的视频</span></span></div>
+      <div class="tile"><b>5,000+</b><span><span class="l-en">views on one short</span><span class="l-zh">单条最高播放</span></span></div>
+      <div class="tile"><b>4.00</b><span><span class="l-en">matriculation CGPA</span><span class="l-zh">预科 CGPA</span></span></div>
+      <div class="tile"><b>2</b><span><span class="l-en">open-source agent skills</span><span class="l-zh">个开源 agent skill</span></span></div>
+    </div>
+    <p class="hx__lead"><span class="l-en">First-year Computer Science (AI) at Universiti Malaya. I edit short videos, and I write the tools that make editing faster.</span><span class="l-zh">马来亚大学计算机科学（人工智能）一年级。我剪短视频，也写让剪辑更快的工具。</span></p>
+    <div class="hx__btns">
+      <a class="btn-p btn-p--line" href="#work"><span class="l-en">See my work</span><span class="l-zh">看作品</span><span class="disc"><svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="btn-p btn-p--blue" href="mailto:zihang070206@gmail.com"><span class="l-en">Email me</span><span class="l-zh">写信给我</span><span class="disc"><svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    </div>
+  </section>
+
+  <section class="section statement" id="statement" data-moment="word-highlight" aria-label="What I do">
+    <div class="wrap">
+      <p class="mo-wh__text l-en">I edit short videos for creators and small brands, and I write the <strong>tools</strong> that make the editing faster.</p>
+      <p class="mo-wh__text l-zh">我为博主和小品牌剪短视频，也写让剪辑更快的<strong>工具</strong>。</p>
+    </div>
+  </section>
+
+  <section class="wheel" id="work" aria-labelledby="work-h">
+    <div class="wheel__stage">
+      <div class="wheel__head sh">
+        <h2 id="work-h"><span class="l-en">Selected <em>work</em></span><span class="l-zh">精选<em>作品</em></span></h2>
+        <span class="count">05 <span class="l-en">projects</span><span class="l-zh">个项目</span></span>
+      </div>
+      <div class="wheel__floor" aria-hidden="true"></div>
+      <div class="ring" data-ring>
+        <a class="pcard" href="https://github.com/bubeishisuqiangua/short-video-edit">
+          <div class="pcard__media"><div class="dg" data-diagram data-dg-still><script type="application/json">{"layout":"lanes","alt":"Raw footage goes into short-video-edit, which makes captions, motion text and the mix in parallel, then the final cut.","curve":"curve","input":{"label":"Footage","icon":"ui:video","meta":"MOV"},"core":{"label":"short-video-edit","icon":"claude-code"},"lanes":[{"label":"Captions","icon":"ui:captions","meta":"Whisper"},{"label":"Motion text","icon":"ui:type","meta":"12 styles"},{"label":"Mix","icon":"ui:audio-lines","meta":"-13 LUFS"}],"output":{"label":"Final cut","icon":"ui:check","done":true}}</script></div></div>
+          <div class="pcard__shade"></div>
+          <div class="pcard__meta"><div><b>short-video-edit</b><span><span class="l-en">Agent skill that edits a talking-head short end to end.</span><span class="l-zh">自动剪口播短视频的 agent skill。</span></span></div><span class="disc"><svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </a>
+        <a class="pcard" href="https://github.com/bubeishisuqiangua/video-content-workflow">
+          <div class="pcard__media"><pre class="cmd" role="img" aria-label="The helper's commands for one video job">workflow.py init
+workflow.py create first-demo
+workflow.py start first-demo
+<em># caption, cover, QA report</em>
+<em># posts stay drafts until approved</em></pre></div>
+          <div class="pcard__shade"></div>
+          <div class="pcard__meta"><div><b>video-content-workflow</b><span><span class="l-en">Idea to captions and cover. Nothing posts without approval.</span><span class="l-zh">从想法到字幕和封面，没确认就不发布。</span></span></div><span class="disc"><svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </a>
+        <a class="pcard" href="media/onlyskills-45s.mp4">
+          <div class="pcard__media"><video src="media/onlyskills-45s.mp4" poster="media/onlyskills-45s.jpg" muted playsinline preload="none" loop data-hover-play aria-label="OnlySkills in 45 seconds: profile, goal, WorkBuddy agents, team, plan and bookkeeping"></video></div>
+          <div class="pcard__shade"></div>
+          <div class="pcard__meta"><div><b>OnlySkills</b><span><span class="l-en">Dormathon 2026. UI/UX designer in a team of 4. Watch the 45-second demo.</span><span class="l-zh">Dormathon 2026，4 人团队里负责 UI/UX。点开看 45 秒演示。</span></span></div><span class="disc"><svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </a>
+        <a class="pcard" href="media/promo-720.mp4">
+          <div class="pcard__media" style="background:#050a06"><video src="media/promo-720.mp4" poster="media/work-interview.jpg" muted playsinline preload="none" loop data-hover-play style="object-fit:contain" aria-label="The showreel, playing without sound"></video></div>
+          <div class="pcard__shade"></div>
+          <div class="pcard__meta"><div><b><span class="l-en">Showreel</span><span class="l-zh">宣传片</span></b><span><span class="l-en">30 seconds: explainers, interviews, ads and tours.</span><span class="l-zh">30 秒：口播、访谈、广告和看房。</span></span></div><span class="disc"><svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </a>
+        <a class="pcard" href="#movielingo">
+          <div class="pcard__media"><img src="media/ml-strip.jpg" alt="Four MovieLingo shorts side by side: bewildered, transcend, cerulean and destined" width="1600" height="712"></div>
+          <div class="pcard__shade"></div>
+          <div class="pcard__meta"><div><b>@movielingo_</b><span><span class="l-en">One English word from one film scene. Top short: 5,000+ views.</span><span class="l-zh">一个电影片段教一个英文词，最高 5,000+ 播放。</span></span></div><span class="disc"><svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        </a>
+      </div>
+      <div class="wheel__count" aria-hidden="true"><b data-wheel-n>01</b> / 05</div>
+    </div>
+  </section>
+
+  <section class="section" id="movielingo" aria-labelledby="movielingo-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="movielingo-h"><span class="l-en"><em>@movielingo_</em>, my Instagram channel</span><span class="l-zh"><em>@movielingo_</em>，我的 Instagram 频道</span></h2>
+        <p><span class="l-en">Each short teaches one English word from a film scene. Top video so far: 5,000+ views. Each one takes me under an hour with my own workflow.</span><span class="l-zh">每条短视频用一个电影片段教一个英文单词。目前最高播放 5,000+。用我自己的工作流，每条不到一小时。</span></p>
+      </div>
+      <div class="grid reels">
+        <a class="reel span-3" href="media/ml-web/bewildered.mp4"><video src="media/ml-web/bewildered.mp4" poster="media/ml-web/bewildered.jpg" muted playsinline preload="none" loop data-hover-play aria-label="MovieLingo short: bewildered, a Mr Bean exam scene"></video></a>
+        <a class="reel span-3" href="media/ml-web/transcend.mp4"><video src="media/ml-web/transcend.mp4" poster="media/ml-web/transcend.jpg" muted playsinline preload="none" loop data-hover-play aria-label="MovieLingo short: transcend, a listening challenge from Interstellar"></video></a>
+        <a class="reel span-3" href="media/ml-web/cerulean.mp4"><video src="media/ml-web/cerulean.mp4" poster="media/ml-web/cerulean.jpg" muted playsinline preload="none" loop data-hover-play aria-label="MovieLingo short: cerulean, from The Devil Wears Prada"></video></a>
+        <a class="reel span-3" href="media/ml-web/destined.mp4"><video src="media/ml-web/destined.mp4" poster="media/ml-web/destined.jpg" muted playsinline preload="none" loop data-hover-play aria-label="MovieLingo short: destined, from Forrest Gump"></video></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wheel wheel--time" id="path" aria-labelledby="path-h" style="--n: 8">
+    <div class="wheel__stage">
+      <div class="wheel__head sh">
+        <h2 id="path-h"><span class="l-en">The path <em>so far</em></span><span class="l-zh">一路<em>走来</em></span></h2>
+        <span class="count">2025 &rarr; 2026</span>
+      </div>
+      <div class="wheel__floor" aria-hidden="true"></div>
+      <div class="ring" data-ring>
+        <article class="pcard tcard" data-month="2025-06">
+          <div class="tcard__media"><img src="media/photo-award.jpg" alt="Wong Zi Hang holding his certificate for a 4.0 semester result" loading="lazy"></div>
+          <div class="tcard__body"><span class="tcard__date">Jun 2025</span><h3><span class="l-en">Johor Matriculation College</span><span class="l-zh">柔佛预科学院</span></h3><p><span class="l-en">Physical Science, finished with a 4.00 CGPA.</span><span class="l-zh">物理科学组，CGPA 4.00 毕业。</span></p></div>
+        </article>
+        <article class="pcard tcard" data-month="2025-07">
+          <div class="tcard__media tcard__media--type" aria-hidden="true"><span>2025</span></div>
+          <div class="tcard__body"><span class="tcard__date">Jul 2025</span><h3><span class="l-en">A first AI short film</span><span class="l-zh">第一部 AI 短片</span></h3><p><span class="l-en">5 minutes, made with Jimeng and Seedance for a competition.</span><span class="l-zh">用即梦和 Seedance 为比赛做了 5 分钟短片。</span></p></div>
+        </article>
+        <article class="pcard tcard" data-month="2026-01">
+          <div class="tcard__media"><img src="media/photo-movienight.jpg" alt="The matriculation movie night: a film on the big screen in a dark lecture hall full of students" loading="lazy"></div>
+          <div class="tcard__body"><span class="tcard__date">Jan 2026</span><h3><span class="l-en">Matriculation movie night</span><span class="l-zh">预科电影之夜</span></h3><p><span class="l-en">Event director: logistics and sound for 100 to 150 students.</span><span class="l-zh">总负责：100 到 150 人的场地和音响。</span></p></div>
+        </article>
+        <article class="pcard tcard" data-month="2026-05">
+          <div class="tcard__media"><img src="media/photo-holasoonlee.jpg" alt="Editing a Holasoonlee video in CapCut on a laptop: two people at a table in the café, a caption on screen" loading="lazy"></div>
+          <div class="tcard__body"><span class="tcard__date">May 2026</span><h3><span class="l-en">Holasoonlee internship</span><span class="l-zh">Holasoonlee 实习</span></h3><p><span class="l-en">3 videos a week for a frozen kuih café in Yong Peng.</span><span class="l-zh">为永平的冷冻糕点 café 每周剪 3 支片。</span></p></div>
+        </article>
+        <article class="pcard tcard" data-month="2026-06" data-fy="0.3">
+          <div class="tcard__media"><img src="media/work-interview.jpg" alt="A still from the showreel: a captioned interview" loading="lazy"></div>
+          <div class="tcard__body"><span class="tcard__date">Jun 2026</span><h3><span class="l-en">Freelance editing</span><span class="l-zh">开始接案剪辑</span></h3><p><span class="l-en">50+ short videos for clients so far.</span><span class="l-zh">至今为客户剪了 50 多条短视频。</span></p></div>
+        </article>
+        <article class="pcard tcard" data-month="2026-09">
+          <div class="tcard__media"><img src="media/photo-camera.jpg" alt="Wong Zi Hang on campus in the rain with a camera" loading="lazy"></div>
+          <div class="tcard__body"><span class="tcard__date">Sep 2026</span><h3><span class="l-en">Universiti Malaya</span><span class="l-zh">马来亚大学</span></h3><p><span class="l-en">Bachelor of Computer Science (AI), year 1.</span><span class="l-zh">计算机科学（人工智能）一年级。</span></p></div>
+        </article>
+        <article class="pcard tcard" data-month="2026-10" data-video="media/onlyskills-45s.mp4">
+          <div class="tcard__media"><img src="media/onlyskills-team-web.jpg" alt="The OnlySkills team constellation screen" loading="lazy"></div>
+          <div class="tcard__body"><span class="tcard__date">Oct 2026</span><h3><span class="l-en">OnlySkills at Dormathon</span><span class="l-zh">Dormathon：OnlySkills</span></h3><p><span class="l-en">UI/UX designer in a team of 4.</span><span class="l-zh">4 人团队里负责 UI/UX。</span></p></div>
+        </article>
+        <article class="pcard tcard" data-month="2026-11" data-video="media/ml-web/cerulean.mp4" data-fy="0.45">
+          <div class="tcard__media"><img src="media/ml-strip.jpg" alt="Four MovieLingo shorts side by side" loading="lazy"></div>
+          <div class="tcard__body"><span class="tcard__date">Nov 2026</span><h3><span class="l-en">@movielingo_ and two tools</span><span class="l-zh">@movielingo_ 和两个工具</span></h3><p><span class="l-en">An Instagram channel, and two agent skills on GitHub.</span><span class="l-zh">开了 Instagram 频道，两个 agent skill 在 GitHub 开源。</span></p></div>
+        </article>
+      </div>
+      <div class="wheel__count" aria-hidden="true"><b data-wheel-n>01</b> / 08</div>
+    </div>
+  </section>
+
+  <section class="section aff" id="affiliations" aria-labelledby="aff-h">
+    <div class="wrap">
+      <div class="sh"><h2 id="aff-h"><span class="l-en">Where I <em>belong</em></span><span class="l-zh">关联<em>组织</em></span></h2></div>
+      <div class="aff__row">
+        <div class="aff__item"><div class="aff__logo"><img src="media/logos/um.png" alt="Universiti Malaya" width="180" height="56"></div><b><span class="l-en">Universiti Malaya</span><span class="l-zh">马来亚大学</span></b><span><span class="l-en">Computer Science (AI), from 2026</span><span class="l-zh">计算机科学（人工智能），2026 年起</span></span></div>
+        <div class="aff__item"><div class="aff__logo"><img src="media/logos/kmj-crest.png" alt="Kolej Matrikulasi Johor" width="470" height="316"></div><b><span class="l-en">Kolej Matrikulasi Johor</span><span class="l-zh">柔佛预科学院</span></b><span><span class="l-en">Physical Science, CGPA 4.00</span><span class="l-zh">物理科学组，CGPA 4.00</span></span></div>
+        <div class="aff__item"><div class="aff__logo aff__logo--type"><span>PEKOM</span></div><b>PEKOM</b><span><span class="l-en">Member, computer society of FCSIT, UM</span><span class="l-zh">马大计算机学院学生会会员</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about" aria-labelledby="about-h">
+    <div class="wrap grid grid--top">
+      <div class="span-6">
+        <div class="section-head">
+          <h2 id="about-h"><span class="l-en">About me</span><span class="l-zh">关于我</span></h2>
+          <p><span class="l-en">I went to school in Yong Peng, Johor, and now study AI in Kuala Lumpur. Most of my work sits between the two halves: cutting videos, and writing code that cuts them faster.</span><span class="l-zh">我在柔佛永平读完中学，现在在吉隆坡读 AI。我做的事大多在两者之间：剪视频，也写让剪视频更快的代码。</span></p>
+        </div>
+        <ul class="rows">
+          <li><span class="rows__name"><span class="l-en">Universiti Malaya</span><span class="l-zh">马来亚大学</span></span><p><span class="l-en">Bachelor of Computer Science (AI)</span><span class="l-zh">计算机科学（人工智能）学士</span></p><span class="rows__value">2026 to 2030</span></li>
+          <li><span class="rows__name"><span class="l-en">Johor Matriculation College</span><span class="l-zh">柔佛预科学院</span></span><p><span class="l-en">Physical Science, CGPA 4.00</span><span class="l-zh">物理科学组，CGPA 4.00</span></p><span class="rows__value">2025 to 2026</span></li>
+          <li><span class="rows__name">SMK Yong Peng</span><p><span class="l-en">SPM, 10 A's. I speak Chinese, English and Malay.</span><span class="l-zh">SPM 10A。会中文、英文和马来文。</span></p></li>
+        </ul>
+      </div>
+      <div class="span-6 start-7">
+        <div class="about-photos" data-visual>
+          <img src="media/photo-award.jpg" alt="Wong Zi Hang at Johor Matriculation College holding his certificate for a 4.0 semester result" width="680" height="907">
+          <img src="media/photo-camera-tall.jpg" alt="Wong Zi Hang on a campus walkway in the rain, checking his phone with a camera in his other hand" width="660" height="880">
+        </div>
+        <div class="stack-icons" aria-label="Tools I use">
+          <span class="ic-tile ic-tile--48" title="Claude Code"><img class="ic" data-icon="claude-code" src="assets/icons/claude-code.svg" alt="Claude Code"></span>
+          <span class="ic-tile ic-tile--48" title="Codex"><img class="ic" data-icon="openai" src="assets/icons/openai.svg" alt="OpenAI Codex"></span>
+          <span class="ic-tile ic-tile--48" title="Python"><img class="ic" data-icon="python" src="assets/icons/python.svg" alt="Python"></span>
+          <span class="ic-tile ic-tile--48" title="FFmpeg"><img class="ic" data-icon="logos:ffmpeg-icon" src="assets/icons/ffmpeg-icon.svg" alt="FFmpeg"></span>
+          <span class="ic-tile ic-tile--48" title="GitHub"><img class="ic ic-ink" data-icon="github" src="assets/icons/github.svg" alt="GitHub"></span>
+          <span class="t-small"><span class="l-en">plus CapCut Pro and Canva</span><span class="l-zh">还有 CapCut Pro 和 Canva</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="fx" id="contact" aria-labelledby="close-h">
+  <div class="fx__row">
+    <h2 id="close-h"><span class="l-en">Let's make <em>something</em> together</span><span class="l-zh">一起做点<em>什么</em>吧</span></h2>
+    <div class="hx__btns" style="margin:0">
+      <a class="btn-p btn-p--line" href="https://www.linkedin.com/in/wong-zi-hang-525a99426/">LinkedIn<span class="disc"><svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="btn-p btn-p--blue" href="mailto:zihang070206@gmail.com"><span class="l-en">Email me</span><span class="l-zh">写信给我</span><span class="disc"><svg class="arr" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    </div>
+  </div>
+  <p class="fx__name" aria-hidden="true">黄梓航</p>
+  <div class="fx__links">
+    <span>&copy; 2026 Wong Zi Hang. <span class="l-en">Product names and logos are trademarks of their owners.</span><span class="l-zh">产品名称和标志归各自所有者。</span></span>
+    <nav aria-label="Elsewhere"><a href="https://github.com/bubeishisuqiangua">GitHub</a><a href="https://www.linkedin.com/in/wong-zi-hang-525a99426/">LinkedIn</a><a href="https://www.instagram.com/movielingo_/">Instagram</a><a href="mailto:zihang070206@gmail.com">Email</a></nav>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="site-motion.js"></script>
+<script type="module" src="timeline.js"></script>
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/diagrams/mount.js"></script>
+</body>
+</html>
